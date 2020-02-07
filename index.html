@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Ollivander's shop</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Ollivander's Shop</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="backend">Administració <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Cercar..." aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="demanarNom();">Cercar</button>
+          </form>
+        </div>
+      </nav>
+
+      <div class="container-fluid">
+        <table class="table table-striped" >
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Preu</th>
+                <th scope="col">Imatge</th>
+                <th scope="col">Operacions</th>
+              </tr>
+            </thead>
+            <tbody id="taulaItems">
+             
+            </tbody>
+          </table>
+
+          <footer class="footer">
+            <div class="container">
+              <span class="text-muted">Copyright 2020. LLM</span>
+            </div>
+          </footer>
+      </div>
+
+      <script>
+        function loadItems() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                var myObj = JSON.parse(this.responseText);
+
+                var taula = document.getElementById("taulaItems");
+
+                taula.innerHTML = "";
+
+                for (let item in myObj.items) {
+                  var row = taula.insertRow(-1);
+                  
+                  var cell0 = row.insertCell(0);
+                  var cell1 = row.insertCell(1);
+                  var cell2 = row.insertCell(2);
+                  var cell3 = row.insertCell(3);
+                  var cell4 = row.insertCell(4);
+                  cell0.innerHTML = parseInt(item)+1;
+                  cell1.innerHTML = myObj.items[item].name;
+                  cell2.innerHTML = myObj.items[item].price;
+                  cell3.innerHTML = "<img src='"+myObj.items[item].image+"'  alt='...' class='img-fluid' style='max-width: 60px;'/>";
+                  cell4.innerHTML = '<a class="btn btn-primary" href="producte.html" role="button">Veure</a>';
+                }
+                //document.getElementById("demo").innerHTML = myObj.name;
+              }
+            };
+            xmlhttp.open("GET", "items.json", true);
+            xmlhttp.send();
+          }        
+
+        window.onload = function() {
+          loadItems();
+        };
+
+      </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

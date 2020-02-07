@@ -1,0 +1,20 @@
+{
+    "items":
+    [
+        {
+            "name": "Item 1",
+            "price": 45.44,
+            "image": "https://manualidadesybellasartes.es/148390-medium_default/varita-magica-madera-natural-273x7x1-cm.jpg"
+        },
+        {
+            "name": "Item 2",
+            "price": 10,
+            "image": "https://manualidadesybellasartes.es/148390-medium_default/varita-magica-madera-natural-273x7x1-cm.jpg"
+        },
+        {
+            "name": "Item 3",
+            "price": 20,
+            "image": "https://manualidadesybellasartes.es/148390-medium_default/varita-magica-madera-natural-273x7x1-cm.jpg"
+        }
+    ]
+}
