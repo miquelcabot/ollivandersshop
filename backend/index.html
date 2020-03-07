@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Ollivander's shop - Backend</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Ollivander's Shop - Backend</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="insertar.html">Insertar <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#diaModal">
+                    Afegir dia
+                </button>
+                
+              </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="../">FrontEnd <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Cercar..." aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cercar</button>
+          </form>
+        </div>
+      </nav>
+
+      <div class="container-fluid">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Preu</th>
+                <th scope="col">Imatge</th>
+                <th scope="col">Operacions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td><a href="modificar.html">Vareta 1</a></td>
+                <td>33.23€</td>
+                <td><img src="https://manualidadesybellasartes.es/148390-medium_default/varita-magica-madera-natural-273x7x1-cm.jpg" alt="..." class="img-fluid" style="max-width: 60px;"></td>
+                <td>
+                    <a class="btn btn-primary" href="modificar.html" role="button">Modificar</a>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#eliminarModal">
+                        Eliminar
+                    </button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td><a href="modificar.html">Vareta 2</a></td>
+                <td>20.00€</td>
+                <td><img src="https://manualidadesybellasartes.es/148390-medium_default/varita-magica-madera-natural-273x7x1-cm.jpg" alt="..." class="img-fluid" style="max-width: 60px;"></td>
+                <td>
+                    <a class="btn btn-primary" href="modificar.html" role="button">Modificar</a>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#eliminarModal">
+                        Eliminar
+                    </button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td><a href="modificar.html">Vareta 3</a></td>
+                <td>65.00€</td>
+                <td><img src="https://manualidadesybellasartes.es/148390-medium_default/varita-magica-madera-natural-273x7x1-cm.jpg" alt="..." class="img-fluid" style="max-width: 60px;"></td>
+                <td>
+                    <a class="btn btn-primary" href="modificar.html" role="button">Modificar</a>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#eliminarModal">
+                        Eliminar
+                    </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <footer class="footer">
+            <div class="container">
+              <span class="text-muted">Copyright 2020. LLM</span>
+            </div>
+          </footer>
+      </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="diaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Incrementar un dia</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Segur que vol incrementar un dia?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Tancar</button>
+          <button type="button" class="btn btn-primary">Incrementar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Modal -->
+<div class="modal fade" id="eliminarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Eliminar</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Segur que vol eliminar el procucte?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Tancar</button>
+          <button type="button" class="btn btn-primary">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
